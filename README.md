@@ -311,3 +311,41 @@ To verify everything works:
 **Made with ❤️ for EMEXA**
 
 🚀 **Ready to use!** All features tested and working perfectly!
+
+## How to run locally (Windows PowerShell)
+
+Quick steps to run backend and frontend on Windows (PowerShell). These are the exact commands used during verification.
+
+1) Start the backend (in a PowerShell window):
+
+```powershell
+cd backend
+python -m venv venv                # only if you haven't created a venv yet
+.\venv\Scripts\Activate          # optional; you can also call the venv python directly
+python -m pip install --upgrade pip
+pip install -r requirements.txt
+python app.py
+```
+
+2) Start the frontend (in a separate PowerShell window):
+
+```powershell
+cd frontend
+npm install        # only once; skip if node_modules already present
+npm run dev
+```
+
+3) One-step helper (starts both in new windows):
+
+```powershell
+# From the repository root:
+.\run-dev.ps1
+```
+
+Notes:
+- Backend: http://127.0.0.1:5000
+- Frontend (Vite): http://localhost:5173 (check Vite output)
+- If script execution is blocked, enable scripts for current user:
+    ```powershell
+    Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
+    ```
